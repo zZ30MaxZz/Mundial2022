@@ -2,8 +2,12 @@ import { init } from "./Player.js";
 import { channels } from "./ch.js";
 
 const main = document.getElementById('app');
-const btn = document.getElementById('change');
 const vid = document.getElementById('video');
+const btn = document.getElementById('change');
+const btnNext = document.getElementById('next-channel');
+const btnPrev = document.getElementById('prev-channel');
+const channelName = document.getElementById('channel');
+const messageContainer = document.getElementById('message-channel');
 
 let count = 0;
 
@@ -12,8 +16,6 @@ const detectIndex = (hash) => {
     let nameChannel = hash.slice(1);
     return channels.findIndex(el => el.name === nameChannel);
 }
-
-const changeChannel = (arr, i = 0) => location.hash = arr[i].name;
 
 const validHash = (hash) => {
     // saque esté canal del if hash === '#directvSports'
@@ -25,6 +27,19 @@ const validHash = (hash) => {
     if (hash === '') return { error: 'No pasaste ningun hash' }
 
     return { error: 'error esté hash NO ES VALIDO' }
+}
+
+const setLoading = () => {
+    messageContainer.innerHTML = 'Cargando...';
+    messageContainer.style.display = 'block';
+    messageContainer.style.backgroundColor = 'rgba(0,255,0,0.3)';
+}
+
+const changeChannel = (arr, i = 0) => {
+    const channel = arr[i].name;
+    location.hash = channel;
+    channelName.innerHTML = channel.toUpperCase();
+    setLoading();
 }
 
 // add shaka-player ===========================================
@@ -77,7 +92,7 @@ document.addEventListener('keydown', e => {
 })
 btn.addEventListener('click', e => {
     count++;
-    change();
+    changeChanel();
 });
 
 function changeChanel() {
