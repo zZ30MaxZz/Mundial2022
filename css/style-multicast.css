@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+}
+
+.multicast-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    max-width: 100vw;
+    flex-wrap: wrap;
+}
+
+.shaka-container-custom {
+    margin-right: .2rem;
+    margin-left: .2rem;
+}
+
+video,
+.shaka-scrim-container,
+.shaka-controls-container,
+.shaka-video-container {
+    height: inherit;
+    max-height: 100px;
+    max-width: 150px;
+}
+
+
+.shaka-controls-button-panel button:nth-child(1),
+.shaka-overflow-menu,
+.shaka-settings-menu,
+.shaka-range-container,
+.shaka-controls-button-panel {
+    display: none;
+}
+
+@media all and (display-mode: fullscreen) {
+    video,
+    shaka-scrim-container,
+    shaka-server-side-ad-container{
+        max-height: 100vh !important;
+        max-width: 100vw !important;
+    }
+}
