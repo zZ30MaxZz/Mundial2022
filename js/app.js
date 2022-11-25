@@ -3,7 +3,6 @@ import { channels } from "./ch.js";
 
 const main = document.getElementById('app');
 const vid = document.getElementById('video');
-const btn = document.getElementById('change');
 const btnNext = document.getElementById('next-channel');
 const btnPrev = document.getElementById('prev-channel');
 const channelName = document.getElementById('channel');
@@ -35,13 +34,6 @@ const setLoading = () => {
     messageContainer.style.backgroundColor = 'rgba(0,255,0,0.3)';
 }
 
-const changeChannel = (arr, i = 0) => {
-    const channel = arr[i].name;
-    location.hash = channel;
-    channelName.innerHTML = channel.toUpperCase();
-    setLoading();
-}
-
 // add shaka-player ===========================================
 document.addEventListener('shaka-ui-loaded', async e => {
     location.hash = channels[count].name
@@ -51,6 +43,8 @@ document.addEventListener('shaka-ui-loaded', async e => {
     typeof val === 'string'
         ? init(val, vid)
         : main.insertAdjacentHTML('afterbegin', `<h1>${val.error}</h1>`);
+
+    channelName.innerHTML = channels[count].name.toUpperCase();
 });
 
 // detect hash in load DOM =========================================
@@ -61,7 +55,6 @@ document.addEventListener('DOMContentLoaded', e => {
     typeof val === 'string'
         ? init(val, vid)
         : console.error(val.error);
-
 });
 
 // detect change hash ===============================================
@@ -75,29 +68,45 @@ window.addEventListener('hashchange', e => {
 // change channel =================================================
 document.addEventListener('keydown', e => {
     if (e.key === 'ArrowRight') {
-        console.log('play')
         count++;
-        changeChanel();
+        changeChannel();
     }
     if (e.key === 'ArrowLeft') {
         count--;
-        changeChanel();
+        changeChannel();
     }
     if (e.key === ' ') {
-        if(vid.paused)
+        if (vid.paused)
             playVid();
         else
             pauseVid();
     }
 })
-btn.addEventListener('click', e => {
+
+const nextChannel = () => {
     count++;
-    changeChanel();
+    changeChannel();
+}
+
+const prevChannel = () => {
+    count--;
+    changeChannel();
+}
+
+btnNext.addEventListener('click', e => {
+    nextChannel();
 });
 
-function changeChanel() {
+btnPrev.addEventListener('click', e => {
+    prevChannel();
+});
+
+function changeChannel() {
+    if (count === -1) count = channels.length - 1
     if (count >= channels.length) count = 0;
-    changeChannel(channels, count);
+    location.hash = channels[count].name;
+
+    setLoading();
 }
 
 function playVid() {

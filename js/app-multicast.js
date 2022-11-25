@@ -3,7 +3,7 @@ import { channels } from "./ch.js";
 
 const template =
     '<div class="shaka-container-custom" data-hash="hash-route"><div data-shaka-player-container>' +
-    '<video autoplay data-shaka-player id="id-video"></video>' +
+    '<video autoplay data-shaka-player id="id-video" class="video-stream"></video>' +
     '</div></div>';
 
 var multicast =  function() {

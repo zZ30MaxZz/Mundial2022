@@ -2,6 +2,12 @@
     margin: 0;
 }
 
+body {
+    background: url("https://images5.alphacoders.com/128/1288612.jpg") no-repeat center center fixed, url("https://www.movistar.es/blog/wp-content/uploads/sites/3/2022/10/Articulo-Blog-Mundial_v1.jpg") no-repeat center center fixed;
+    background-size: cover;
+    overflow: hidden;
+}
+
 .multicast-container {
     display: flex;
     align-items: center;
@@ -14,6 +20,13 @@
 .shaka-container-custom {
     margin-right: .2rem;
     margin-left: .2rem;
+}
+
+.shaka-container-custom:hover video{
+    transform: translateY(-.5rem) scale(1.01);
+    box-shadow: -5px -5px 30px 5px red, 5px 5px 30px 5px blue;
+    z-index: 1;
+    transition: .2s ease;
 }
 
 video,
@@ -35,9 +48,10 @@ video,
 }
 
 @media all and (display-mode: fullscreen) {
+
     video,
     shaka-scrim-container,
-    shaka-server-side-ad-container{
+    shaka-server-side-ad-container {
         max-height: 100vh !important;
         max-width: 100vw !important;
     }
