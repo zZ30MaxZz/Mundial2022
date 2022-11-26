@@ -5,7 +5,7 @@ const channels = [
     },
     {
         name: 'dSports',
-        url: 'https://dtvott-abc.akamaized.net/dash_live_1061/manifest.mpd?&ck=eyI3MTE5MDY5Yjk5MDE1YjRlYjllZTQzMDA1NzczOTllMiIgOiAiYjg5ODI3Y2M5NzBjZDc4ZGE4ODJmZmNhMzUwNGM3NzQifQ=='
+        url: 'https://dtvott-abc.akamaized.net/dash_live_1057/manifest.mpd?&ck=eyJhN2UwOWM2ZjQ3YWY1N2U5OTliNzg5ZWI1NGQzMjU1ZCIgOiAiMjYzZjZkYjEyZDZmOWFhNzJmMmNjOWIwZWYyZTI2YjIifQ=='
     },
     {
         name: 'tvPublica',

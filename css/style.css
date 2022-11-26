@@ -5,6 +5,9 @@
 body {
     margin: 0;
     padding: 0;
+    background: url("https://www.movistar.es/blog/wp-content/uploads/sites/3/2022/10/Articulo-Blog-Mundial_v1.jpg") no-repeat center center fixed;
+    background-size: cover;
+    overflow: hidden;
 }
 
 main {
@@ -79,8 +82,7 @@ button,
     z-index: 1;
 }
 
-#channel
-{
+#channel {
     position: absolute;
     top: 0;
     background-color: rgba(0, 0, 0, 0.3);
@@ -91,21 +93,19 @@ button,
     text-transform: uppercase;
 }
 
-.button-default
-{
+.button-default {
     position: absolute;
-    top: 0;
+    top: 60px;
     background-color: rgba(0, 0, 0, 0.3);
     padding: 15px;
     border-radius: 0 0 5px 5px;
     color: #fff;
     z-index: 5;
     text-transform: uppercase;
-    right: 25%;
+    left: 0;
 }
 
-.visits-counter
-{
+.visits-counter {
     position: absolute;
     top: 60px;
     background-color: rgba(0, 0, 0, 0.3);
@@ -126,8 +126,7 @@ button,
     background-color: rgba(0, 0, 0, 0.3);
 }
 
-#prev-channel
- {
+#prev-channel {
     position: absolute;
     z-index: 5;
     top: 0;
@@ -145,4 +144,63 @@ button,
     padding: 15px;
     border-radius: 5px;
     display: none;
+}
+
+.effect-box:hover {
+    box-shadow: -5px -5px 30px 5px red, 5px 5px 30px 5px blue;
+    transform: scale(1.05);
+    transition: .2s ease;
+}
+
+@media (max-width: 480px) {
+    #next-channel {
+        bottom: 70px !important;
+        top: auto;
+    }
+
+    #prev-channel {
+        bottom: 70px !important;
+        top: auto;
+    }
+
+    #channel {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.hide-after-show {
+    animation: hide-animation 0s ease-in 5s;
+    animation-fill-mode: forwards;
+}
+
+.hide-after-show-second {
+    animation: hide-animation2 0s ease-in 5s;
+    animation-fill-mode: both;
+}
+
+@keyframes hide-animation {
+    from {
+        visibility: visible;
+        transition: .2s ease;
+    }
+    to {
+        visibility: hidden;
+        width: 0;
+        height: 0;
+        transition: .2s ease;
+    }
+}
+
+@keyframes hide-animation2 {
+    from {
+        visibility: visible;
+        transition: .2s ease;
+    }
+    to {
+        visibility: hidden;
+        width: 0;
+        height: 0;
+        transition: .2s ease;
+    }
 }

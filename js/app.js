@@ -106,6 +106,10 @@ function changeChannel() {
     if (count >= channels.length) count = 0;
     location.hash = channels[count].name;
 
+    channelName.innerHTML = channels[count].name;
+
+    channelName.classList.toggle("hide-after-show");
+    channelName.classList.toggle("hide-after-show-second");
     setLoading();
 }
 
