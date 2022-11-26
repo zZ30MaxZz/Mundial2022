@@ -1,7 +1,7 @@
 document.addEventListener('click', function handleClick(event) {
     let elementClass = event.target.className;
 
-    if (elementClass !== '' && elementClass === 'shaka-scrim-container') {
+    if (elementClass !== '' && (elementClass === 'shaka-scrim-container' || elementClass === 'shaka-play-button-container')) {
         let element = event.target.parentElement.parentElement.parentElement;
 
         console.log(element.dataset.hash)

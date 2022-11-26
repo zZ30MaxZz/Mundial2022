@@ -104,6 +104,19 @@ button,
     right: 25%;
 }
 
+.visits-counter
+{
+    position: absolute;
+    top: 60px;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    border-radius: 0 0 5px 5px;
+    color: #fff;
+    z-index: 5;
+    text-transform: uppercase;
+    right: 0;
+}
+
 #next-channel {
     position: absolute;
     z-index: 5;

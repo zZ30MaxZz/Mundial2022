@@ -1,0 +1,10 @@
+https://api.countapi.xyz/create?namespace=mundial-qatar2022.000webhostapp.com&enable_reset=1
+
+mundial-qatar2022.000webhostapp.com
+
+{"namespace":"mundial-qatar2022.000webhostapp.com","key":"c3f712ab-f51a-4f2f-95c4-bd3a0c6294b1","value":0}
+
+
+https://api.countapi.xyz/get/mundial-qatar2022.000webhostapp.com/a43c402d-5fd0-40ea-ada8-b2e766986835
+
+https://api.countapi.xyz/set/{namespace}/{key}?value={lo que quieras, probablemente 0}
